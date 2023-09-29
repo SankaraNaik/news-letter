@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #b73232;
+    display: grid;
+    place-items: center;
+    font-family:poppins, sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+button{
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    transition: all 300ms ease;
+    border-radius: 25px;
+    border: none;
+    /* cursor: pointer; */
+}
+
+button:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    animation: openModal 500ms linear forwards;
+    
+}
+
+/* OPEN model animetion */
+
+@keyframes openModal {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* CLOSE modal Animation */
+
+@keyframes clsModal{
+    form{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+} 
+
+.close-modal-animation{
+    animation: clsModal 500ms linear forwards;
+}
+/* media query */
+
+.modal .card{
+    background:#fff ;
+    width: 80rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    position: relative;
+    object-fit: cover;
+}
+.modal .card #close{
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 1.99rem;
+    cursor: pointer;
+}
+.modal .card .brand{
+    width: 30rem;
+    display: block;
+    width: 100%;
+}
+
+.modal .card h2{
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+.info{
+    font-size: 2rem;
+}
+
+.modal .card form{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .card input[type="email"]{
+    background: #e4dcdc;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    font-size:25px;
+    font-weight:500;
+}
+.modal .card input[type="submit"]{
+    background: #b73232;
+    color: #fff;
+    padding: 0 1.6rem;
+    border: none;
+    width: 50%;
+    font-size:25px;
+    font-weight:500;
+}
+@media screen and (max-width:800px) {
+    .modal .card{
+        flex-direction: column;
+        width: 80vw;
+        text-align: center;
+    }
+
+    .modal .card .brand{
+        width: 25rem;
+        height: 25rem;
+        object-fit: cover;
+        border-radius: 80%;
+        overflow: hidden;
+        margin-top: 4rem;
+    }
+
+    .modal .card form{
+        display: block;
+    }
+
+    .modal .card form input[type="email"], 
+    .modal .card form input[type="email"]::placeholder{
+      text-align: center;
+
+    }
+
+    .modal .card form input[type="submit"]{
+        display: block;
+        width: 100%;
+        padding: 1rem 0;
+        margin-top: 0.6rem;
+    } 
+}
+
+
+
